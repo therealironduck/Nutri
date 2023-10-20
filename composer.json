@@ -1,0 +1,41 @@
+{
+    "name": "therealironduck/nutri",
+    "description": "Automatically generate meal plans based on your goals",
+    "type": "library",
+    "require": {
+        "php": "8.1.*|8.2.*",
+        "illuminate/support": "^10.28"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TheRealIronDuck\\Nutri\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jordan Kniest",
+            "email": "mail@jkniest.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "jkniest/linting": "^1.16",
+        "phpstan/phpstan": "^1.10",
+        "friendsofphp/php-cs-fixer": "3.35.1",
+        "pestphp/pest": "^2.24"
+    },
+    "scripts": {
+        "test": [
+            "php-cs-fixer fix --config=.php-cs-fixer.php",
+            "phpstan analyse src --level=max",
+            "pest --coverage --min=100 -p --coverage-html coverage"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
